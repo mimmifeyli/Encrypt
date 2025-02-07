@@ -1,6 +1,5 @@
 C:\Users\mimmi\EncryptionAPI2\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\mimmi\EncryptionAPI2\bin\Debug\net8.0\appsettings.json
-C:\Users\mimmi\EncryptionAPI2\bin\Debug\net8.0\EncryptionAPI2.staticwebassets.endpoints.json
 C:\Users\mimmi\EncryptionAPI2\bin\Debug\net8.0\EncryptionAPI2.exe
 C:\Users\mimmi\EncryptionAPI2\bin\Debug\net8.0\EncryptionAPI2.deps.json
 C:\Users\mimmi\EncryptionAPI2\bin\Debug\net8.0\EncryptionAPI2.runtimeconfig.json
@@ -21,9 +20,7 @@ C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\EncryptionAPI2.sourcelink.json
 C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\scopedcss\bundle\EncryptionAPI2.styles.css
 C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\staticwebassets\msbuild.EncryptionAPI2.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\staticwebassets\msbuild.EncryptionAPI2.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\staticwebassets\msbuild.build.EncryptionAPI2.props
 C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.EncryptionAPI2.props
 C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.EncryptionAPI2.props
@@ -34,3 +31,4 @@ C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\refint\EncryptionAPI2.dll
 C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\EncryptionAPI2.pdb
 C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\EncryptionAPI2.genruntimeconfig.cache
 C:\Users\mimmi\EncryptionAPI2\obj\Debug\net8.0\ref\EncryptionAPI2.dll
+C:\Users\mimmi\EncryptionAPI2\bin\Debug\net8.0\global.json
