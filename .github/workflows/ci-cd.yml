@@ -15,7 +15,7 @@ jobs:
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '6.0'
+          dotnet-version: '8.0.405'
 
       - name: Build and Publish projekt
         run: |
