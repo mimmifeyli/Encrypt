@@ -1,4 +1,4 @@
-name: Encryptioanapi2
+name: Encryptionapi2
 
 on:
   push:
@@ -42,7 +42,7 @@ jobs:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: eu-north-1
-          application_name: EncryptAPI
-          environment_name: Mimmi1
+          application_name: Mimmi1
+          environment_name: Mimmi1-env
           version_label: ${{ github.run_id }}
           deployment_package: site.zip
