@@ -3,55 +3,46 @@ name: Encryptioanapi2
 on:
   push:
     branches:
-      
-main
-dev
-pull_request:
-  branches:
-main
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      
-name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      
-name: Setup .NET 9.0.100
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '9.0.100'
+      - name: Setup .NET 9.0.100
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0.100'
 
-      
-name: Build project
-      run: dotnet build --configuration Release
+      - name: Build project
+        run: dotnet build --configuration Release
 
-      
-name: Run Tests
-      run: dotnet test --configuration Release
+      - name: Run Tests
+        run: dotnet test --configuration Release
 
-      
-name: Publish Application
-      run: dotnet publish -c Release -o ./publish
+      - name: Publish Application
+        run: dotnet publish -c Release -o ./publish
 
-      
-name: Zip published files
-      run: |
-        cd publish
-        zip -r ../site.zip ./*
-        cd ..
+      - name: Zip published files
+        run: |
+          cd publish
+          zip -r ../site.zip ./*
+          cd ..
 
-      
-name: Deploy to AWS Elastic Beanstalk
-      uses: einaregilsson/beanstalk-deploy@v21
-      with:
-        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        region: eu-north-1
-        application_name: EncryptAPI
-        environment_name: Mimmi1
-        version_label: ${{ github.run_id }}
-        deployment_package: site.zip
+      - name: Deploy to AWS Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: eu-north-1
+          application_name: EncryptAPI
+          environment_name: Mimmi1
+          version_label: ${{ github.run_id }}
+          deployment_package: site.zip
