@@ -1,39 +1,57 @@
-name: Build-aws
+name: Encryptioanapi2
+
 on:
   push:
     branches:
-      - main
+      
+main
+dev
+pull_request:
+  branches:
+main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      
+name: Checkout repo
+      uses: actions/checkout@v3
 
-      - name: Setup .NET Core SDK
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.405'
+      
+name: Setup .NET 9.0.100
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '9.0.100'
 
-      - name: Build and Publish projekt
-        run: |
-          dotnet restore 
-          dotnet publish -c Release -o ./publish
+      
+name: Build project
+      run: dotnet build --configuration Release
 
-      - name: Create zip package
-        run: |
-          cd ./publish
-          zip -r ../EncryptionApi2.zip .
+      
+name: Run Tests
+      run: dotnet test --configuration Release
 
-      - name: Deploy to AWS Elastic Beanstalk
-        uses: einaregilsson/beanstalk-deploy@v22
-        with:
-          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: "Mimmi1"
-          environment_name: "Mimmi1-env"
-          version_label: ${{ github.run_id }}
-          region: eu-north-1
-          deployment_package: EncryptionApi2.zip
+      
+name: Publish Application
+      run: dotnet publish -c Release -o ./publish
+
+      
+name: Zip published files
+      run: |
+        cd publish
+        zip -r ../site.zip ./*
+        cd ..
+
+      
+name: Deploy to AWS Elastic Beanstalk
+      uses: einaregilsson/beanstalk-deploy@v21
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        region: eu-north-1
+        application_name: EncryptAPI
+        environment_name: Mimmi1
+        version_label: ${{ github.run_id }}
+        deployment_package: site.zip
