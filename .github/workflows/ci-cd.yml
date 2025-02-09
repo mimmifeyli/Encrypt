@@ -1,4 +1,4 @@
-name: Encryptionapi2
+name: Encryptionapi
 
 on:
   push:
