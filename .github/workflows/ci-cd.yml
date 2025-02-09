@@ -16,10 +16,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup .NET 9.0.100
+      - name: Setup .NET 6.0
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '9.0.100'
+          dotnet-version: '6.0'
 
       - name: Build project
         run: dotnet build --configuration Release
@@ -46,3 +46,4 @@ jobs:
           environment_name: Mimmi1-env
           version_label: ${{ github.run_id }}
           deployment_package: site.zip
+
